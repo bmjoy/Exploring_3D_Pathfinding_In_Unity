@@ -1,5 +1,7 @@
 # Exploring_3D_Pathfinding_In_Unity
  A* algorithm in Unity, over 3D space.
+ 
+ 
  This is more or less copy-pasted from Sebastian Lague's pathfinding system, but written to accomodate 3 dimensions instead of only 2. I'm hoping to also convert the multithreading bits to have it multithread through the jobs system.
  
 
