@@ -14,5 +14,5 @@
 |Smooth weighting over 3d grid|
 |path smoothing in 3d grid|
 |optimizing the heap optimization|
-|multithreading through jobs instead of the old fashioned way|
+|multithreading through jobs|
  
