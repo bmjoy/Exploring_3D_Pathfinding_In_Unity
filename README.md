@@ -20,3 +20,4 @@
 |-----|-------|
 |Sebastian Lague Pathfinding Repo| https://github.com/SebLague/Pathfinding|
 |Sebastian Lague Pathfinding Playlist| https://www.youtube.com/playlist?list=PLFt_AvWsXl0cq5Umv3pMC9SPnKjfp9eGW|
+|CodeMonkey Pathfinding in Dots|https://www.youtube.com/watch?v=1bO1FdEThnU|
