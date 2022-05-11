@@ -6,7 +6,7 @@
 
 |To Do|
 |-----|
-|[x]3D Grid | 
+|-[x]3D Grid | 
 | 3D Pathfinding  |
 |Heap Optimization|
 |Smooth weighting over 3d grid|
