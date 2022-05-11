@@ -15,5 +15,6 @@
  
  | Done |
 | ------------- |
-| Content Cell  | 
-| Content Cell  |
+| 3D Grid | 
+| 3D Pathfinding  |
+|Heap Optimization|
