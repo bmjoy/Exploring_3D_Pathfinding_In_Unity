@@ -16,7 +16,7 @@
 |optimizing the heap optimization|
 |multithreading through jobs|
  
-|Resources|Link|
+|Resource|Link|
 |-----|-------|
 |Sebastian Lague Pathfinding Repo| https://github.com/SebLague/Pathfinding|
 |Sebastian Lague Pathfinding Playlist| https://www.youtube.com/playlist?list=PLFt_AvWsXl0cq5Umv3pMC9SPnKjfp9eGW|
