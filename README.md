@@ -6,13 +6,13 @@
 
 |To Do|
 |-----|
-- [ ] 3D Grid 
-| 3D Pathfinding  |
-|Heap Optimization|
-|Smooth weighting over 3d grid|
-|path smoothing in 3d grid|
-|optimizing the heap optimization|
-|multithreading through jobs|
+| ☑️ 3D Grid| 
+| ☑️ 3D Pathfinding  |
+| ☑️ Heap Optimization|
+| ☐ Smooth weighting over 3d grid|
+| ☐ path smoothing in 3d grid|
+| ☐ optimizing the heap optimization|
+| ☐ multithreading through jobs|
  
 |Resource|Link|
 |-----|-------|
