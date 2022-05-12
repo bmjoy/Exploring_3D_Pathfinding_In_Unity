@@ -4,7 +4,7 @@
  
  This is more or less copy-pasted from Sebastian Lague's pathfinding system, but written to accomodate 3 dimensions instead of only 2. I'm hoping to also convert the multithreading bits to be multithreaded through the jobs system.
 
-https://user-images.githubusercontent.com/94728326/168167565-43251f57-49be-4db2-b5cc-b27dd1443164.mp4
+https://user-images.githubusercontent.com/94728326/168167685-74766afb-a5f2-491b-a395-e2ca4bd8fb0e.mp4
 
 |To Do|
 |-----|
