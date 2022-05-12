@@ -2,7 +2,7 @@
  A* algorithm in Unity, over 3D space.
  
  
- This is more or less copy-pasted from Sebastian Lague's pathfinding system, but written to accomodate 3 dimensions instead of only 2. I'm hoping to also convert the multithreading bits to be multithreaded through the jobs system.
+ This is more or less copy-pasted from Sebastian Lague's pathfinding system, but written to accomodate 3 dimensions instead of only 2. I'm hoping to also convert the multithreading bits to be multithreaded through the jobs system, though it doesn't seem very likely.
 
 https://user-images.githubusercontent.com/94728326/168167685-74766afb-a5f2-491b-a395-e2ca4bd8fb0e.mp4
 
