@@ -41,7 +41,7 @@ public class Pathfinding : MonoBehaviour {
                     if (!neighbour.walkable || closedSet.Contains(neighbour)) {
                         continue;
                     }
-                    int newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour) + neighbour.movementPenalty;
+                    float newMovementCostToNeighbour = currentNode.gCost + GetDistance(currentNode, neighbour) + neighbour.movementPenalty;
                     if (newMovementCostToNeighbour < neighbour.gCost || !openSet.Contains(neighbour)) {
                         neighbour.gCost = newMovementCostToNeighbour;
                         neighbour.hCost = GetDistance(neighbour, targetNode);
@@ -89,7 +89,7 @@ public class Pathfinding : MonoBehaviour {
         }
         return waypoints.ToArray();
     }
-    int GetDistance(Node nodeA, Node nodeB) {
+    float GetDistance(Node nodeA, Node nodeB) {
         // int dstX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
         // int dstY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
         // int dstZ = Mathf.Abs(nodeA.gridZ - nodeB.gridZ);
@@ -105,6 +105,6 @@ public class Pathfinding : MonoBehaviour {
         //     }
         // }
         // return 17 * dstY + 14 * (dstY - dstX) + 10 * (dstX - dstZ - dstY);
-        return Mathf.RoundToInt(Vector3.Distance(nodeA.worldPosition, nodeB.worldPosition));
+        return (Vector3.Distance(nodeA.worldPosition, nodeB.worldPosition));
     }
 }

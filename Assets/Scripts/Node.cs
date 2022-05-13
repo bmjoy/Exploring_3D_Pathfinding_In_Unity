@@ -5,7 +5,7 @@ using UnityEngine;
 public class Node : IHeapItem<Node> {
     public bool walkable;
     public Vector3 worldPosition;
-    public int gCost, hCost;
+    public float gCost, hCost;
     public int gridX, gridY, gridZ;
     public Node parent;
     int heapIndex;
@@ -18,7 +18,7 @@ public class Node : IHeapItem<Node> {
         gridZ = _gridZ;
         movementPenalty = _penalty;
     }
-    public int fCost {
+    public float fCost {
         get { return gCost + hCost; }
     }
     public int HeapIndex {
