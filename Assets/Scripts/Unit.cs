@@ -8,7 +8,7 @@ public class Unit : MonoBehaviour {
     int targetIndex;
     Grid grid;
     public KeyCode findPathKey = KeyCode.P;
-    public bool findPathOnAwake = true, findPathEveryUpdate;
+    public bool findPathOnAwake = true;
 
     void Start() {
         grid = FindObjectOfType<Grid>();
@@ -17,7 +17,7 @@ public class Unit : MonoBehaviour {
         }
     }
     void Update() {
-        if (findPathEveryUpdate || Input.GetKeyDown(findPathKey)) {
+        if (Input.GetKeyDown(findPathKey)) {
             FindPath();
         }
     }

@@ -8,6 +8,8 @@ using UnityEngine;
 public class Pathfinding : MonoBehaviour {
     PathRequestManager requestManager;
     Grid grid;
+    Heap<Node> openSet;
+    HashSet<Node> closedSet;
     void Awake() {
         requestManager = GetComponent<PathRequestManager>();
         grid = GetComponent<Grid>();
@@ -25,8 +27,8 @@ public class Pathfinding : MonoBehaviour {
         Node targetNode = grid.NodeFromWorldPoint(targetPos
         );
         if (startNode.walkable && targetNode.walkable) {
-            Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
-            HashSet<Node> closedSet = new HashSet<Node>();
+            openSet = new Heap<Node>(grid.MaxSize);
+            closedSet = new HashSet<Node>();
             openSet.Add(startNode);
             while (openSet.Count > 0) {
                 Node currentNode = openSet.RemoveFirst();
@@ -48,15 +50,17 @@ public class Pathfinding : MonoBehaviour {
                         neighbour.parent = currentNode;
                         if (!openSet.Contains(neighbour)) {
                             openSet.Add(neighbour);
-                        }else{
+                        } else {
                             openSet.UpdateItem(neighbour);
                         }
                     }
                 }
+                if (grid.splitPathfindingOverFrames) {
+                    yield return null;
+                }
             }
+            yield return null;
         }
-
-        yield return null;
         if (pathSuccess) {
             waypoints = RetracePath(startNode, targetNode);
         }

@@ -14,6 +14,7 @@ public class Grid : MonoBehaviour {
     int gridSizeX, gridSizeY, gridSizeZ;
     LayerMask walkableMask;
     Dictionary<int, int> walkableRegionsDictionary = new Dictionary<int, int>();
+    public bool splitPathfindingOverFrames;
     public int MaxSize {
         get {
             return gridSizeX * gridSizeY * gridSizeZ;
