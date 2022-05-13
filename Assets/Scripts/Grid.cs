@@ -8,8 +8,9 @@ public class Grid : MonoBehaviour {
     public TerrainType[] walkableRegions;
     public LayerMask unwalkableMask;
     public bool displayGridGizmos, onlyDisplayWalkable, onlyDisplayUnwalkable;
+    [Range(0.001f, 1)] public float nodeSizeGizmo = 0.1f;
     Node[,,] grid;
-    float nodeDiameter;
+    public float nodeDiameter{get;set;}
     int gridSizeX, gridSizeY, gridSizeZ;
     LayerMask walkableMask;
     Dictionary<int, int> walkableRegionsDictionary = new Dictionary<int, int>();
@@ -104,7 +105,7 @@ public class Grid : MonoBehaviour {
                 }
 
                 Gizmos.color = walkable ? Color.white : Color.red;
-                Gizmos.DrawWireCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
+                Gizmos.DrawWireCube(n.worldPosition, Vector3.one * (nodeDiameter - nodeSizeGizmo));
             }
         }
     }

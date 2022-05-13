@@ -3,11 +3,25 @@ using System.Collections;
 
 public class Unit : MonoBehaviour {
     public Transform target;
-    public float speed = 20;
+    public float speed = 2;
     Vector3[] path;
     int targetIndex;
+    Grid grid;
+    public KeyCode findPathKey = KeyCode.P;
+    public bool findPathOnAwake = true, findPathEveryUpdate;
 
     void Start() {
+        grid = FindObjectOfType<Grid>();
+        if (findPathOnAwake){
+            FindPath();
+        }
+    }
+    void Update() {
+        if (findPathEveryUpdate || Input.GetKeyDown(findPathKey)) {
+            FindPath();
+        }
+    }
+    void FindPath() {
         PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
     }
 
@@ -41,7 +55,8 @@ public class Unit : MonoBehaviour {
         if (path != null) {
             for (int i = targetIndex; i < path.Length; i++) {
                 Gizmos.color = Color.black;
-                Gizmos.DrawWireCube(path[i], Vector3.one);
+                //Gizmos.DrawWireCube(path[i], Vector3.one);
+                Gizmos.DrawWireCube(path[i], Vector3.one * (grid.nodeDiameter - grid.nodeSizeGizmo));
 
                 if (i == targetIndex) {
                     Gizmos.DrawLine(transform.position, path[i]);
