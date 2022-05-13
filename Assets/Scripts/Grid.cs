@@ -7,7 +7,7 @@ public class Grid : MonoBehaviour {
     public float nodeRadius;
     public TerrainType[] walkableRegions;
     public LayerMask unwalkableMask;
-    public bool displayGridGizmos;
+    public bool displayGridGizmos, onlyDisplayWalkable, onlyDisplayUnwalkable;
     Node[,,] grid;
     float nodeDiameter;
     int gridSizeX, gridSizeY, gridSizeZ;
@@ -95,7 +95,15 @@ public class Grid : MonoBehaviour {
         Gizmos.DrawWireCube(transform.position, gridWorldSize);
         if (grid != null && displayGridGizmos) {
             foreach (Node n in grid) {
-                Gizmos.color = n.walkable ? Color.white : Color.red;
+                bool walkable = n.walkable;
+                //only do this if both settings arent turned on. if they are, ignore it.
+                if (!(onlyDisplayUnwalkable && onlyDisplayWalkable)) {
+                    if ((walkable && onlyDisplayUnwalkable) || (!walkable && onlyDisplayWalkable)) {
+                        continue;
+                    }
+                }
+
+                Gizmos.color = walkable ? Color.white : Color.red;
                 Gizmos.DrawWireCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
             }
         }

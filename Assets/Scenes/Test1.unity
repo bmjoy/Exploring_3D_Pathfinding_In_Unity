@@ -926,6 +926,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   displayGridGizmos: 1
+  onlyDisplayWalkable: 1
+  onlyDisplayUnwalkable: 0
 --- !u!114 &2147315719
 MonoBehaviour:
   m_ObjectHideFlags: 0
